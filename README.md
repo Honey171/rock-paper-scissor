@@ -3,7 +3,7 @@ This app challenge from: https://www.frontendmentor.io/challenges/rock-paper-sci
 
 Challenge difficulty at frontedmentor: Advanced
 
-You can check and play here: honey-rock-paper-scissor.netlify.app
+You can check and play here: https://honey-rock-paper-scissor.netlify.app/
 
 Used frameworks/libraries: React, tailwind-css
 
