@@ -1,24 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import Header from './components/Header';
+import Menu from './components/Menu';
+import Rules from './components/Rules';
 
 function App() {
+  const [score, setScore] = useState(0);
+  const [rulesModal, setRulesModal] = useState(false);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <div className="flex flex-col justify-center items-center m-0">
+        {rulesModal && (
+          <Rules
+            rulesModal={rulesModal}
+            setRulesModal={setRulesModal}
+          />
+        )}
+        <div
+          className={`pt-10 flex flex-col justify-center items-center ${
+            rulesModal ? 'opacity-50 pointer-events-none' : ''
+          } `}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          <Header
+            score={score}
+            setScore={setScore}
+          />
+          <Menu
+            score={score}
+            setScore={setScore}
+            rulesModal={rulesModal}
+            setRulesModal={setRulesModal}
+          />
+        </div>
+      </div>
+    </>
   );
 }
 
